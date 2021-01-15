@@ -1,0 +1,13 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Champion {
+  id: ID!
+  name: String!
+}
+
+type Query {
+  champion(id: String!): Champion!
+  champions: [Champion!]!
+}

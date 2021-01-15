@@ -1,6 +1,6 @@
 # League of Legends
 
-A simple POC showing [League of Legends champions](https://developer.riotgames.com/docs/lol) to see how these libraries work together.
+A simple POC showing [League of Legends](https://developer.riotgames.com/docs/lol) champions to see how these libraries work together.
 
 - NX as repo manager;
 - NestJS with GraphQL as API;

@@ -10,4 +10,4 @@ A simple POC showing [League of Legends champions](https://developer.riotgames.c
 ## Getting started
 
 - Install dependencies with `npm install`;
-- Run the API with `npm start api` ou UI with `npm start ui`.
+- Run the API with `npm start api` or UI with `npm start ui`.

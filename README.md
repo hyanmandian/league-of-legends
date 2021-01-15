@@ -6,3 +6,8 @@ A simple POC showing [League of Legends champions](https://developer.riotgames.c
 - NestJS with GraphQL as API;
 - React as UI;
 - React with Tailwind as Design System library.
+
+## Getting started
+
+- Install dependencies with `npm install`;
+- Run the API with `npm start api` ou UI with `npm start ui`.

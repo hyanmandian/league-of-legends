@@ -5,7 +5,9 @@ A simple POC showing [League of Legends](https://developer.riotgames.com/docs/lo
 - NX as repo manager;
 - NestJS with GraphQL as API;
 - React as UI;
-- React with Tailwind as Design System library.
+- React with Tailwind as Design System library;
+- SWR with URQL as API client;
+- MSW as mock server.
 
 ## Getting started
 

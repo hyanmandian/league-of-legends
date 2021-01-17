@@ -1,26 +1,16 @@
-import { NotFoundException } from '@nestjs/common';
 import { Args, Query, Resolver } from '@nestjs/graphql';
+import { Observable } from 'rxjs';
 
 import { Champion } from './models/champion.model';
+import { ChampionsArgs } from './dto/champions.args';
 import { ChampionsService } from './champions.service';
 
 @Resolver((of) => Champion)
 export class ChampionsResolver {
   constructor(private readonly championsService: ChampionsService) {}
 
-  @Query((returns) => Champion)
-  async champion(@Args('id') id: string): Promise<Champion> {
-    const champion = await this.championsService.findOneById(id);
-
-    if (!champion) {
-      throw new NotFoundException(id);
-    }
-
-    return champion;
-  }
-
   @Query((returns) => [Champion])
-  champions(): Promise<Champion[]> {
-    return this.championsService.findAll();
+  champions(@Args() params: ChampionsArgs): Observable<Champion[]> {
+    return this.championsService.findAll(params);
   }
 }

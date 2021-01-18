@@ -12,4 +12,4 @@ A simple POC showing [League of Legends](https://developer.riotgames.com/docs/lo
 ## Getting started
 
 - Install dependencies with `npm install`;
-- Run the API with `npm start api` or UI with `npm start ui`.
+- Run the API with `npm start api`, UI with `npm start ui` or the Design System with `npm run storybook`.

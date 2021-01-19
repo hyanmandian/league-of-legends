@@ -1,7 +1,10 @@
 import React from 'react';
+import { Provider } from '@league-of-legends/design-system';
 
 import { Routes } from '../../routes';
 
-const App: React.FC = () => <Routes />;
-
-export default App;
+export const App = () => (
+  <Provider>
+    <Routes />
+  </Provider>
+);

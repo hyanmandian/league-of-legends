@@ -1,4 +1,4 @@
-import { Args, Query, Resolver } from '@nestjs/graphql';
+import { Args, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
 import { Observable } from 'rxjs';
 
 import { Champion } from './models/champion.model';
@@ -12,5 +12,10 @@ export class ChampionsResolver {
   @Query((returns) => [Champion])
   champions(@Args() params: ChampionsArgs): Observable<Champion[]> {
     return this.championsService.findAll(params);
+  }
+
+  @ResolveField('position', (returns) => [String])
+  position(@Parent() champion: Champion) {
+    return this.championsService.findPosition(champion.id);
   }
 }

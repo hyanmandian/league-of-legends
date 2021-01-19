@@ -11,23 +11,24 @@ export type ChampionsResponse = {
       name: string;
       tags: [string];
       info: { difficulty: number };
+      title: string;
     }
   >;
 };
 
-export type Rates = Record<
-  string,
-  Record<
-    Position,
-    {
-      playRate: number;
-      winRate: number;
-      banRate: number;
-    }
-  >
->;
-
-export type RatesResponse = { data: Rates };
+export type RatesResponse = {
+  data: Record<
+    string,
+    Record<
+      Position,
+      {
+        playRate: number;
+        winRate: number;
+        banRate: number;
+      }
+    >
+  >;
+};
 
 @ObjectType()
 export class Champion {
@@ -42,13 +43,16 @@ export class Champion {
   name: string;
 
   @Field()
+  title: string;
+
+  @Field()
   avatar: string;
 
   @Field((type) => [String])
-  tags: [string];
+  tags: string[];
 
   @Field()
-  position: Position;
+  position?: Position;
 
   @Field()
   difficulty: number;

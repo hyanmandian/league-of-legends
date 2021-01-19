@@ -3,7 +3,6 @@ import { map, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 import {
-  Rates,
   Position,
   Champion,
   RatesResponse,
@@ -25,10 +24,13 @@ export class ChampionsService {
         `https://cdn.merakianalytics.com/riot/lol/resources/latest/en-US/championrates.json`
       )
       .pipe(
-        map(
-          (response) =>
-            (Object.keys(response.data.data[id])[0] as unknown) as Position
-        ),
+        map((response) => {
+          const a = (Object.keys(
+            response.data.data[id]
+          )[0] as unknown) as Position;
+          console.log(a);
+          return a;
+        }),
         tap(
           () => this.logger.log(`Successfully fetched champion ${id} position`),
           () => this.logger.log(`Failed to fetch champion ${id} position`)
@@ -51,6 +53,9 @@ export class ChampionsService {
                 id: champion.key,
                 name: champion.name,
                 tags: champion.tags,
+                title:
+                  champion.title.charAt(0).toUpperCase() +
+                  champion.title.slice(1),
                 avatar: `https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champion.id}.png`,
                 difficulty: champion.info.difficulty,
               })

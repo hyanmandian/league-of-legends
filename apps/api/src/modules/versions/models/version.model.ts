@@ -1,11 +1,17 @@
 import { Field, ObjectType } from '@nestjs/graphql';
 
-type VersionResponse = string;
+export type VersionResponse = {
+  v: string;
+};
 
-export type VersionsResponse = [VersionResponse];
+export type VersionsResponse = [string];
 
 @ObjectType()
 export class Version {
+  constructor(partial: Partial<Version>) {
+    Object.assign(this, partial);
+  }
+
   @Field()
-  version: VersionResponse;
+  version: string;
 }

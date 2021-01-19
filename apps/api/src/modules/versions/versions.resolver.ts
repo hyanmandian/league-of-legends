@@ -12,9 +12,4 @@ export class VersionsResolver {
   versions(): Observable<Version[]> {
     return this.versionsService.findAll();
   }
-
-  @Query((returns) => Version)
-  currentVersion(): Observable<Version> {
-    return this.versionsService.findCurrent();
-  }
 }

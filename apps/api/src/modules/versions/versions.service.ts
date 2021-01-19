@@ -15,27 +15,27 @@ export class VersionsService {
   constructor(private httpService: HttpService) {}
 
   findAll(): Observable<Version[]> {
-    this.logger.log('Fetching versions data');
+    this.logger.log('Fetching versions');
 
     return this.httpService.get<VersionsResponse>(this.endpoint).pipe(
       map((response) =>
         response.data.map((version) => ({ version } as Version))
       ),
       tap(
-        () => this.logger.log('Successfully fetched versions data'),
-        () => this.logger.log('Failed to fetch versions data')
+        () => this.logger.log('Successfully fetched versions'),
+        () => this.logger.log('Failed to fetch versions')
       )
     );
   }
 
   findCurrent(): Observable<Version> {
-    this.logger.log('Fetching current version data');
+    this.logger.log('Fetching current version');
 
     return this.findAll().pipe(
       map((versions) => versions[0]),
       tap(
-        () => this.logger.log('Successfully fetched current version data'),
-        () => this.logger.log('Failed to fetch current version data')
+        () => this.logger.log('Successfully fetched current version'),
+        () => this.logger.log('Failed to fetch current version')
       )
     );
   }

@@ -1,8 +1,9 @@
-import { HttpService, Injectable, Logger } from '@nestjs/common';
-import { Observable } from 'rxjs';
+import { Logger, Injectable, HttpService } from '@nestjs/common';
 import { map, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 import {
+  Rates,
   Position,
   Champion,
   RatesResponse,
@@ -29,14 +30,14 @@ export class ChampionsService {
             (Object.keys(response.data.data[id])[0] as unknown) as Position
         ),
         tap(
-          () => this.logger.log(`Successfully champion ${id} position`),
+          () => this.logger.log(`Successfully fetched champion ${id} position`),
           () => this.logger.log(`Failed to fetch champion ${id} position`)
         )
       );
   }
 
   findAll({ version, language }: ChampionsArgs): Observable<Champion[]> {
-    this.logger.log(`Fetching champions data`);
+    this.logger.log(`Fetching champions`);
 
     return this.httpService
       .get<ChampionsResponse>(
@@ -56,8 +57,8 @@ export class ChampionsService {
           )
         ),
         tap(
-          () => this.logger.log('Successfully fetched champions data'),
-          () => this.logger.log('Failed to fetch champions data')
+          () => this.logger.log('Successfully fetched champions'),
+          () => this.logger.log('Failed to fetch champions')
         )
       );
   }

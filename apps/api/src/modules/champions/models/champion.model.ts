@@ -15,21 +15,19 @@ export type ChampionsResponse = {
   >;
 };
 
-export type RatesResponse = {
-  data: {
-    data: Record<
-      string,
-      Record<
-        Position,
-        {
-          playRate: number;
-          winRate: number;
-          banRate: number;
-        }
-      >
-    >;
-  };
-};
+export type Rates = Record<
+  string,
+  Record<
+    Position,
+    {
+      playRate: number;
+      winRate: number;
+      banRate: number;
+    }
+  >
+>;
+
+export type RatesResponse = { data: Rates };
 
 @ObjectType()
 export class Champion {

@@ -1,4 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const withNx = require('@nrwl/next/plugins/with-nx');
+const withPreact = require('next-plugin-preact');
 
-module.exports = withNx({});
+module.exports = withPreact(withNx({}));

@@ -1,7 +1,7 @@
 {
   "npmScope": "league-of-legends",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "main"
   },
   "implicitDependencies": {
     "workspace.json": "*",
@@ -29,19 +29,13 @@
     }
   },
   "projects": {
-    "ui": {
-      "tags": []
-    },
-    "ui-e2e": {
-      "tags": [],
-      "implicitDependencies": [
-        "ui"
-      ]
-    },
     "design-system": {
       "tags": []
     },
-    "api": {
+    "web": {
+      "tags": []
+    },
+    "server": {
       "tags": []
     }
   }

@@ -90,7 +90,7 @@ export class RegionsService {
 
   findDefault(): Observable<Region> {
     return this.regions.pipe(
-      map((regions) => regions.find((region) => region.id === 'NA1'))
+      map((regions) => regions.find((region) => region.id === 'na1'))
     );
   }
 }

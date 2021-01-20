@@ -1,7 +1,8 @@
 module.exports = {
   projects: [
-    '<rootDir>/apps/ui',
     '<rootDir>/libs/design-system',
-    '<rootDir>/apps/api',
+    <rootDir>/apps/server,
+    '<rootDir>/apps/web',
   ],
 };
+,"<rootDir>/apps/webdfd","<rootDir>/libs/xcasddas"

@@ -1,14 +1,10 @@
-import React, { Fragment, createElement } from 'react';
-import { setup } from 'goober/macro';
-import { GlobalStyles } from 'twin.macro/macro';
+import React, { Fragment } from 'react';
+import { setup } from 'twind';
 
 type Props = {};
 
-setup(createElement);
+setup();
 
 export const Provider: React.FC<Props> = ({ children }) => (
-  <Fragment>
-    <GlobalStyles />
-    {children}
-  </Fragment>
+  <Fragment>{children}</Fragment>
 );

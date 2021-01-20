@@ -178,9 +178,6 @@
       "library": {
         "style": "css",
         "linter": "eslint"
-      },
-      "application": {
-        "babel": true
       }
     },
     "@nrwl/next": {

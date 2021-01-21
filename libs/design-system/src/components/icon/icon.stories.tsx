@@ -5,7 +5,7 @@ import { Icon } from './';
 
 export default { title: 'Icon' };
 
-export const Trash = () => (
+export const standard = () => (
   <Icon
     icon={text('Icon', 'trash')}
     size={select('Size', [16, 24, 32], 24)}

@@ -4,4 +4,4 @@ import { Button } from './';
 
 export default { title: 'Button' };
 
-export const none = () => <Button>Default</Button>;
+export const standard = () => <Button>Default</Button>;

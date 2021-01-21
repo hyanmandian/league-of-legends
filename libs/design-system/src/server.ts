@@ -1,14 +1,16 @@
-import { setup } from 'twind';
-import { virtualSheet, getStyleTagProperties } from 'twind/sheets';
+import { create } from 'twind';
+import { shim, virtualSheet, getStyleTagProperties } from 'twind/shim/server';
 
 import twindConfig from './twind.config';
 
 const sheet = virtualSheet();
 
-setup({ ...twindConfig, sheet });
+const { tw } = create({ ...twindConfig, sheet });
 
-export function extractStyles() {
+export function extractStyles(html: string) {
   sheet.reset();
+
+  shim(html, { tw });
 
   return getStyleTagProperties(sheet);
 }

@@ -1,14 +1,15 @@
 import React, { Fragment } from 'react';
-import Link from 'next/link';
-import { Button } from '@league-of-legends/design-system';
+import { Icon, Button } from '@league-of-legends/design-system';
+
+import { Link } from '../components/link';
 
 function NotFound() {
   return (
     <Fragment>
       Page not found :( <br />{' '}
-      <Link href="/">
-        <Button>Go home</Button>
-      </Link>
+      <Button as={Link} href="/">
+        Go home <Icon icon="trash" />
+      </Button>
     </Fragment>
   );
 }

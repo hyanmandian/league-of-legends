@@ -168,7 +168,7 @@
         "generate": {
           "executor": "@nrwl/workspace:run-commands",
           "options": {
-            "command": "node node_modules/@svgr/cli/bin/svgr --index-template libs/icons/templates/index.js --template libs/icons/templates/component.js --out-dir libs/icons/src --memo --title-prop --typescript libs/icons/files"
+            "command": "node node_modules/@svgr/cli/bin/svgr --index-template libs/icons/templates/index.js --template libs/icons/templates/component.js --out-dir libs/icons/src --memo --title-prop --ignore-existing --typescript libs/icons/files"
           }
         },
         "test": {

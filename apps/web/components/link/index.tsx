@@ -10,7 +10,7 @@ export const Link: React.FC<Props> = ({
   locale,
   replace,
   shallow,
-  passHref,
+  passHref = true,
   prefetch,
   ...props
 }) => {

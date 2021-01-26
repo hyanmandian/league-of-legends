@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@league-of-legends/design-system": ["libs/design-system/src/index.ts"]
+      "@league-of-legends/design-system": ["libs/design-system/src/index.ts"],
+      "@league-of-legends/icons": ["libs/icons/src/index.tsx"]
     }
   },
   "exclude": ["node_modules", "tmp"]

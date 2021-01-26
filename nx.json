@@ -1,14 +1,9 @@
 {
   "npmScope": "league-of-legends",
-  "affected": {
-    "defaultBase": "main"
-  },
+  "affected": { "defaultBase": "main" },
   "implicitDependencies": {
     "workspace.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
@@ -29,14 +24,9 @@
     }
   },
   "projects": {
-    "design-system": {
-      "tags": []
-    },
-    "web": {
-      "tags": []
-    },
-    "server": {
-      "tags": []
-    }
+    "design-system": { "tags": [] },
+    "web": { "tags": [] },
+    "server": { "tags": [] },
+    "icons": { "tags": [] }
   }
 }
